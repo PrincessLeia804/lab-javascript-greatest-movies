@@ -129,7 +129,23 @@ function orderAlphabetically(moviesArray) {
  }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-function turnHoursToMinutes(moviesArray) { }
+function turnHoursToMinutes(moviesArray) {
+    
+    /* regular expression \d+, any digit from 0 to 9 (\d) repeated one or more times (+). 
+    The qualifier g =  global search (doesn't stop on the first hit).*/
+
+        let currentMovieDuration = movie.map(function (element) {
+           return element.duration.match(/\d+/g);
+        });
+
+        let timeArr = currentMovieDuration.map(function (element) {
+            return parseInt(element);
+        });       
+
+        timeArr.forEach(duration => duration = (timeArr[0])*60 + (timeArr[1]));
+    
+}
+
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 function bestYearAvg(moviesArray) { }
